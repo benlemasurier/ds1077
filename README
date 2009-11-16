@@ -16,3 +16,20 @@ if multiple bytes need to be sent, just send them one after another (post acknow
   finish with Wire.endTransmission();
 
 
+----------
+
+OUT1 = main oscillator output - freq determined by the control register settings for the prescaler P1
+        (mode bits 1M1 & 1M0) and divider N (DIV word)
+
+OUT0 = ref output, OUT0 is taken from the output of the reference select Mux. Its freq is determined
+        by the control register settings for CTRL0 and values of Prescaler P0
+        (mode bits 0M1 & 0M0)
+
+CTRL0 = multifunctional input pin that can be selected as a MUX SELECT, OUTPUT ENABLE and/or a POWERR-DOWN.
+        determined by register values EN0, SEL0, and PDN0 (check table 1)
+
+CTRL1 = mulitfunctinal input pin that can be selected as a OUTPUT ENABLE and/or a POWER-DOWN. determined by
+        register PDN1 (table 2)
+
+
+        
