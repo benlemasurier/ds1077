@@ -35,7 +35,7 @@ void setup() {
     ds1077_write(MUX, 0x11, 0x00);
 
     // Sets N to create 40kHz wave on OUT1
-    ds1077_write(DIV, 0xCF, 0xC0);
+    ds1077_write(DIV, 18F);
 }
 
 void loop() {
