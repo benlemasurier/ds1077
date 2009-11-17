@@ -41,6 +41,22 @@ void setup() {
 void loop() {
 }
 
+void set_n_divisor(unsigned int n) {
+#ifdef DEBUG
+    Serial.print("DEBUG: setting 'n' divisor to ");
+    Serial.println(n);
+#endif
+    int msb, lsb;
+
+    // DIV (n) = N + 2, lets keep it simple.
+    n -= 2;
+
+    msb = 0xFF & n;
+    lsb = n >> 8;
+
+    ds1077_write(DIV, msb, lsb);
+}
+
 void ds1077_write(unsigned int command, unsigned int msb, unsigned int lsb) {
 #ifdef DEBUG
     Serial.print("WRITING ");
