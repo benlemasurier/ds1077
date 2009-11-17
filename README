@@ -37,7 +37,16 @@ CTRL1 = mulitfunctinal input pin that can be selected as a OUTPUT ENABLE and/or 
 MUX = mode of operation
 DIV = operating frequency
 BUS = bus settings
+-------------------------------------------------------------------------------
 
+MUX WORD:
+
+      MSB                                           LSB   MSB                              LSB
+ ______________________________________________________________________________________________
+| NAME | * | PDN1 | PDN0 | SEL0 | EN0 | 0M1 | 0M0 | 1M1 || 1M0 | DIV1 | - | - | - | - | - | - |
++---------------------------------------------------------------------------------------------+
+|dfault| 0 |   0  |   0  |   1  |  1  |  0  |  0  |  0  ||  0  |   0  | x | x | x | x | x | x |
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 EN0 (bit)
     1) if (EN0 = 1) and (PDN0 = 0) the CTRL0 pin functions as an Output Enable for OUT0,
        the frequency of the output being determined by the SEL0 bit.
@@ -64,11 +73,10 @@ PDN1
     1) if set to 1, CTRL1 will function as a power-down.
     2) if 0, CTRL1 will function as an output enable for OUT1 only.
 
+
 MUX register functions:
         
---
-
-DIV WORD
+DIV WORD:
 
     MSB                                  LSB   MSB              LSB
     ________________________________________________________________
