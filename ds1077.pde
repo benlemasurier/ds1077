@@ -51,6 +51,7 @@ void set_n_divisor(unsigned int n) {
     // DIV (n) = N + 2, lets keep it simple.
     n -= 2;
 
+    // split significant bytes
     msb = 0xFF & n;
     lsb = n >> 8;
 
