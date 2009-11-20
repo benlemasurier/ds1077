@@ -19,11 +19,11 @@
 void setup() {
     Wire.begin(); // We're I2C-Bus Master
  
-    // Set OUT1 to 40kHz and OUT2 to 133Mhz
-    // Also enabled CRTL1 as control pin for OUT1
+    // enable DIV, set both prescalars to their
+    // maximum values (P0/1 = 8)
     ds1077_write(MUX, 0b00001111, 0x00);
- 
-    // Sets DIV 'N' divisor to 1025
+
+    // set DIV to the maximum value
     set_n_divisor(1025);
 }
  
